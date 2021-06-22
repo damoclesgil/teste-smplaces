@@ -1,0 +1,91 @@
+{
+  "name": "teste-smplaces",
+  "version": "0.1.0",
+  "author": "damoclesgil",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --port 9000",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "test": "vue-cli-service test:unit --watchAll"
+  },
+  "dependencies": {
+    "core-js": "3.15.0",
+    "vue": "3.0.6",
+    "vue-router": "4.0.10"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.23",
+    "@typescript-eslint/eslint-plugin": "4.28.0",
+    "@typescript-eslint/parser": "4.28.0",
+    "@vue/cli-plugin-babel": "4.5.13",
+    "@vue/cli-plugin-eslint": "4.5.13",
+    "@vue/cli-plugin-router": "4.5.13",
+    "@vue/cli-plugin-typescript": "4.5.13",
+    "@vue/cli-plugin-unit-jest": "4.5.13",
+    "@vue/cli-service": "4.5.13",
+    "@vue/compiler-sfc": "3.1.1",
+    "@vue/eslint-config-prettier": "6.0.0",
+    "@vue/eslint-config-typescript": "7.0.0",
+    "@vue/test-utils": "2.0.0-rc.8",
+    "eslint": "7.29.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-vue": "7.11.1",
+    "lint-staged": "11.0.0",
+    "prettier": "2.3.1",
+    "typescript": "4.3.4",
+    "vue-jest": "5.0.0-alpha.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended",
+      "@vue/typescript/recommended",
+      "@vue/prettier",
+      "@vue/prettier/@typescript-eslint"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "rules": {},
+    "overrides": [
+      {
+        "files": [
+          "**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.vue$": "vue-jest"
+    },
+    "testMatch": [
+      "**/*.spec.{j,t}s?(x)"
+    ]
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
